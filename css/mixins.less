@@ -1,0 +1,116 @@
+//HEADER FONT MIXIN
+
+.headerFontAttributes(@headerFamily; @headerColor; @headerSize) {
+    font-family: @headerFamily;
+    color: @headerColor; // assigns color to @headerColor
+    font-size: @headerSize; // assigns font size to @headerSize
+    font-weight: bold; // no dynamic arguments needed
+    margin-top: @headerSize * 0.25; // multiply the @headerSize by 0.5 and assign to margin-top
+    margin-bottom: @headerSize * 0.25; // multiply the @headerSize by 0.5 and assign to margin-top
+    text-transform: uppercase;
+		
+}
+
+//BODY FONT MIXIN
+
+.bodyFontAttributes(@fontFamily; @fontColor; @fontSize) {
+    font-family: @fontFamily;// assigns font family
+    color: @fontColor; // assigns color to @fontColor
+    font-size: @fontSize; // assigns font size to @fontSize
+    font-weight: normal;
+    line-height: @fontSize * 2; //multiplies font size by 2 and assigns to line-height   
+}
+
+//FOOTER STYLES
+
+.footerStyles(@footerBackground; @footerFontColor; @footerLinkColor) {
+    background-color: @footerBackground;// assigns color to footer
+    color: @footerFontColor; // assigns color to footer font
+    a {
+        color: @footerLinkColor; //assigns color to links in footer   
+    }
+}
+
+//HORIZONTAL CENTERING
+
+
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.roundedCornerAndBgColor(@paramRadius: 10px; @paramColor: #aaa) {
+    -mox-border-radius: @paramRadius;
+    -webkit-border-radius: @paramRadius;
+    border-radius: @paramRadius;
+    background-color: @paramColor;
+}
+.linear-gradient(@paramDirection: left, @paramFirst: #ccc, @paramFinal: #aaa){
+    background: @paramFirst; /* For browsers that do not support gradients */
+    background: -o-linear-gradient(@paramDirection, @paramFirst, @paramFinal);
+    background: -moz-linear-gradient(@paramDirection, @paramFirst, @paramFinal);
+    background: linear-gradient(@paramDirection, @paramFirst, @paramFinal);
+}
+.important() {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.floatright() {
+    float: right;
+    display: inline;
+    margin: 10px;
+}
+.border() {
+    padding: 10px;
+    border: 1px solid #666666;
+    background-color: white;
+}
+.size() { 
+    font-size: 3.5em;
+    margin-left: -50px;
+    padding-bottom: 10px;
+}
+
+.wrapper(@backgroundColor) {
+	background-color: @backgroundColor;
+	min-width: 700px;
+	max-width: 1042px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//navbar
+
+.gradient (@startColor: #eee, 
+           @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
